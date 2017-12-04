@@ -1,0 +1,30 @@
+//   @include forsprite(916px,397px); top, left 
+//    @include sprite($photoicon1); sprite name png
+//
+@mixin spriteWidth($sprite) {
+    width: nth($sprite, 5);
+}
+@mixin spriteHeight($sprite) {
+    height: nth($sprite, 6)
+}
+@mixin spritePosition($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+@mixin spriteImage($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(../images/#{$sprite-image});
+}
+@mixin sprite($sprite) {
+    @include spriteImage($sprite)
+    @include spritePosition($sprite)
+    @include spriteWidth($sprite)
+    @include spriteHeight($sprite)
+}
+@mixin forsprite($left:0,$top:0) {
+  position: absolute;
+  content: '';
+  left: $left;
+  top: $top;
+}

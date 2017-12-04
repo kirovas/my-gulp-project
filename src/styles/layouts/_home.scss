@@ -1,0 +1,13 @@
+@media (min-width:1200px){
+	.container {
+	    width: 1220px;
+
+	}
+	body{
+		color:#000;
+	}
+}
+.sprite-test{
+	position:relative;
+	@include sprite($astonia);
+}
